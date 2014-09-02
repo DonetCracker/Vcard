@@ -326,7 +326,6 @@ EXTERN_C VCARDDLL_API VCARD* getVcard(char* m ,int cardsize ,int* outs)
 
 	return nvcard;
 }
-//Error	2	error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.	c:\users\xobyx\documents\visual studio 2012\projects\vcard\vcarddll\vcarddll.cpp	212	1	vcarddll
 
 EXTERN_C VCARDDLL_API char* getvcardstring(VCARD i)
 {

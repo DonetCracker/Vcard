@@ -76,7 +76,7 @@ EXTERN_C VCARDDLL_API VCARD* getVcard(char* m ,int cardsize ,int* outs)
 			char filed_value[750]={'\0'};
 			char coustm_name[2750]={'\0'};
                         //old/char* coustm_vale=(char*)malloc(cardsize);
-                        char coustm_vale[]=new char[cardsize)];
+                        char* coustm_vale=new char[cardsize];
 			memset(coustm_vale,0,cardsize);
 			char defend_vale[150]={'\0'};  
 			//#endif // TEST

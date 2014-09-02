@@ -13,8 +13,6 @@
 // This class is exported from the vcarddll.dll
 
 
-extern VCARDDLL_API int nvcarddll;
 
-VCARDDLL_API int fnvcarddll(void);
 
 

@@ -11,7 +11,7 @@
 // This is an example of an exported variable
 
 
-VCARDDLL_API int nvcarddll=0;
+
 
 
 

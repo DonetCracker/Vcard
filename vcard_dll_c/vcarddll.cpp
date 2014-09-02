@@ -13,12 +13,7 @@
 
 VCARDDLL_API int nvcarddll=0;
 
-// This is an example of an exported function.
-VCARDDLL_API int fnvcarddll(void)
-{
-	return 42;
-}
-#ifdef __cplusplus
+
 
 
 #define isnewviledline(x) strchr((x),';')!=NULL||strchr((x),':')!=NULL
@@ -171,6 +166,7 @@ EXTERN_C VCARDDLL_API VCARD* getVcard(char* m ,int cardsize ,int* outs)
 									}
 									else
 										nvcard->vcardname.isencoded=false;
+										/*
 									char* pch;
 
 									//strchr(coustm_vale,';');
@@ -192,11 +188,36 @@ EXTERN_C VCARDDLL_API VCARD* getVcard(char* m ,int cardsize ,int* outs)
 									strcpy_s(nvcard->vcardname.nameprefix,str[0]);
 									strcpy_s(nvcard->vcardname.fristname,str[1]);
 									strcpy_s(nvcard->vcardname.famliy,str[2]);
+									****old***/
+									char* pch;
+									char* pch1;
 
+									//strchr(coustm_vale,';');
+									char* namelist [5];
+									int yp=0;
+									
+									//save=(int)filed_value;
+									pch=coustm_vale;
+									while (true)
+									{
+										
+										pch1=strchr(pch,';');
+											if(pch1==nullptr)
+											break;
+									   *pch1=0;
+									
+										namelist[yp++]=pch;
+										pch=pch1+1;
+									
+								
+									}
+									strcpy_s(nvcard->vcardname.famliy,str[0]);
+									strcpy_s(nvcard->vcardname.fristname,str[1]);
+									strcpy_s(nvcard->vcardname.nameprefix,str[2]);
 
 								}
 
-								coustm_vale=(char*)save;
+							//	coustm_vale=(char*)save;
 							}
 							else if (!strcmp(filed_name,"FN"))
 							{
@@ -253,10 +274,10 @@ EXTERN_C VCARDDLL_API VCARD* getVcard(char* m ,int cardsize ,int* outs)
 						char* pch1;
 
 									//strchr(coustm_vale,';');
-									char* str [14];
+									char* namelist [5];
 									int yp=0;
 									
-									save=(int)filed_value;
+									//save=(int)filed_value;
 									pch=filed_value;
 									while (true)
 									{
@@ -266,14 +287,14 @@ EXTERN_C VCARDDLL_API VCARD* getVcard(char* m ,int cardsize ,int* outs)
 											break;
 									   *pch1=0;
 									
-										str[yp++]=pch;
+										namelist[yp++]=pch;
 										pch=pch1+1;
 									
 								
 									}
-									strcpy_s(nvcard->vcardname.nameprefix,str[0]);
+									strcpy_s(nvcard->vcardname.famliy,str[0]);
 									strcpy_s(nvcard->vcardname.fristname,str[1]);
-									strcpy_s(nvcard->vcardname.famliy,str[2]);
+									strcpy_s(nvcard->vcardname.nameprefix,str[2]);
 
 
 
